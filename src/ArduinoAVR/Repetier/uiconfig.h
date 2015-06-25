@@ -355,7 +355,7 @@ void ui_check_slow_keys(int &action) {
   int analogkey = 0 ;
   int values[]={94, 181, 325, 515, 697};
 
-#dark magic with chinese keypad start here
+// dark magic with chinese keypad start here
   digitalWrite(33,LOW);
   pinMode(33,INPUT);
   int analogstate =0;
@@ -371,7 +371,7 @@ void ui_check_slow_keys(int &action) {
   } 
 // Com::print(analogstate);
 // Com::println();
-#end of dark magic
+// end of dark magic
 
   UI_KEYS_ANALOG(5,UI_ACTION_PREVIOUS); // Up button
   UI_KEYS_ANALOG(2,UI_ACTION_NEXT); // down button
