@@ -2181,15 +2181,15 @@ void UIDisplay::nextPreviousAction(int8_t next)
     Commands::printCurrentPosition();
     break;
     case UI_ACTION_XPOSITION_FAST:
-        PrintLine::moveRelativeDistanceInStepsReal(Printer::axisStepsPerMM[0]*increment,0,0,0,Printer::homingFeedrate[0],true);
+        PrintLine::moveRelativeDistanceInStepsReal(Printer::axisStepsPerMM[0]*increment*10,0,0,0,Printer::homingFeedrate[0],true);
         Commands::printCurrentPosition();
         break;
     case UI_ACTION_YPOSITION_FAST:
-        PrintLine::moveRelativeDistanceInStepsReal(0,Printer::axisStepsPerMM[1]*increment,0,0,Printer::homingFeedrate[1],true);
+        PrintLine::moveRelativeDistanceInStepsReal(0,Printer::axisStepsPerMM[1]*increment*10,0,0,Printer::homingFeedrate[1],true);
         Commands::printCurrentPosition();
         break;
     case UI_ACTION_ZPOSITION_FAST:
-        PrintLine::moveRelativeDistanceInStepsReal(0,0,Printer::axisStepsPerMM[2]*increment,0,Printer::homingFeedrate[2],true);
+        PrintLine::moveRelativeDistanceInStepsReal(0,0,Printer::axisStepsPerMM[2]*increment*10,0,Printer::homingFeedrate[2],true);
         Commands::printCurrentPosition();
         break;
     case UI_ACTION_EPOSITION:
@@ -3013,7 +3013,7 @@ void UIDisplay::slowAction()
                 HAL::forbidInterrupts();
                 flags &= ~3;
             }
-            else if(time-lastButtonStart>UI_KEY_BOUNCETIME)     // New key pressed
+            else if(time-lastButtonStart>=UI_KEY_BOUNCETIME)     // New key pressed
             {
                 lastAction = lastButtonAction;
                 executeAction(lastAction);
