@@ -59,7 +59,7 @@
 #define EXTRUDER_FAN_COOL_TEMP 50
 #define EXT0_X_OFFSET 0
 #define EXT0_Y_OFFSET 0
-#define EXT0_STEPS_PER_MM 98.425196
+#define EXT0_STEPS_PER_MM 100
 #define EXT0_TEMPSENSOR_TYPE 97
 #define EXT0_TEMPSENSOR_PIN TEMP_0_PIN
 #define EXT0_HEATER_PIN HEATER_0_PIN
@@ -263,7 +263,7 @@
 #define ACK_WITH_LINENUMBER
 #define WAITING_IDENTIFIER "wait"
 #define ECHO_ON_EXECUTE
-#define EEPROM_MODE 0
+#define EEPROM_MODE 1
 
 /* ======== Servos =======
 Control the servos with
